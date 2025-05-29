@@ -43,28 +43,19 @@ public class DefaultOptionalHandler<E> implements TypeHandler<Optional<E>> {
     @Override
     public Optional<E> getResult(ResultSet rs, String columnName) throws SQLException {
         E result = delegate.getResult(rs, columnName);
-        if (result == null) {
-            return Optional.empty();
-        }
-        return Optional.of(result);
+        return Optional.ofNullable(result);
     }
 
     @Override
     public Optional<E> getResult(ResultSet rs, int columnIndex) throws SQLException {
         E result = delegate.getResult(rs, columnIndex);
-        if (result == null) {
-            return Optional.empty();
-        }
-        return Optional.of(result);
+        return Optional.ofNullable(result);
     }
 
     @Override
     public Optional<E> getResult(CallableStatement cs, int columnIndex) throws SQLException {
         E result = delegate.getResult(cs, columnIndex);
-        if (result == null) {
-            return Optional.empty();
-        }
-        return Optional.of(result);
+        return Optional.ofNullable(result);
     }
 
 }
