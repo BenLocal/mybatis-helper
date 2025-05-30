@@ -3,13 +3,13 @@ package com.github.benshi.mybatis.handler;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.ibatis.type.ObjectTypeHandler;
 import org.apache.ibatis.type.TypeHandler;
 
 import com.github.benshi.mybatis.handler.optional.OptionalBooleanHandler;
 import com.github.benshi.mybatis.handler.optional.OptionalIntHandler;
 import com.github.benshi.mybatis.handler.optional.OptionalLocalDateTimeHandler;
 import com.github.benshi.mybatis.handler.optional.OptionalLongHandler;
+import com.github.benshi.mybatis.handler.optional.OptionalObjectTypeHandler;
 import com.github.benshi.mybatis.handler.optional.OptionalStringHandler;
 
 /**
@@ -26,7 +26,7 @@ public class OptionalTypeHandlerFactory {
 
     static {
         // Default type handler for unsupported types
-        defTypeHandler = ObjectTypeHandler.class;
+        defTypeHandler = OptionalObjectTypeHandler.class;
 
         allTypeHandlersMap.put(Boolean.class, OptionalBooleanHandler.class);
         allTypeHandlersMap.put(boolean.class, OptionalBooleanHandler.class);
