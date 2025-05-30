@@ -44,7 +44,7 @@ public class OptionalTypeHandlerFactory {
         // No instantiation allowed
     }
 
-    public Class<? extends TypeHandler<?>> getTypeHandlerClazz(String type) {
+    public static Class<? extends TypeHandler<?>> getTypeHandlerClazz(String type) {
         try {
             return getTypeHandlerClazz(Class.forName(type));
         } catch (ClassNotFoundException e) {
