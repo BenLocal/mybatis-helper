@@ -26,7 +26,7 @@ mybatis helper tools
 ```xml
 <dependency>
     <groupId>com.github.benlocal</groupId>
-	<artifactId>mybatis-helper</artifactId>
+    <artifactId>mybatis-helper</artifactId>
     <version>main-SNAPSHOT</version>
 </dependency>
 ```
