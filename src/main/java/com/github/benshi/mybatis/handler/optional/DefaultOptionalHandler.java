@@ -28,11 +28,7 @@ public class DefaultOptionalHandler<E> implements TypeHandler<Optional<E>> {
     @Override
     public void setParameter(PreparedStatement ps, int i, Optional<E> parameter, JdbcType jdbcType)
             throws SQLException {
-        if (parameter == null) {
-            delegate.setParameter(ps, i, null, jdbcType);
-            return;
-        }
-        if (parameter.isPresent()) {
+        if (parameter != null && parameter.isPresent()) {
             delegate.setParameter(ps, i, parameter.get(), jdbcType);
         } else {
             delegate.setParameter(ps, i, null, jdbcType);
